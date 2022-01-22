@@ -113,12 +113,14 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btn_Exit);
             this.Controls.Add(this.btn_Login);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txt_Password);
+            this.Controls.Add(this.txt_UserName);
+            this.KeyPreview = true;
             this.Name = "flogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng nhập";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.flogin_FormClosed);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.flogin_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 
