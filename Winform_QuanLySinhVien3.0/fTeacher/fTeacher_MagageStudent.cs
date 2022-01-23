@@ -7,19 +7,28 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Winform_QuanLySinhVien3._0.DAL_data_access_layer_;
 
 namespace Winform_QuanLySinhVien3._0
 {
     public partial class fTeacher_MagageStudent : Form
     {
-        public fTeacher_MagageStudent()
+
+        private int IdAccount;
+        public fTeacher_MagageStudent(int IdAccount)
         {
             InitializeComponent();
+            this.IdAccount = IdAccount;
         }
 
         private void btn_Exit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void fTeacher_MagageStudent_Load(object sender, EventArgs e)
+        {
+            datagrid_Mark.DataSource = Teacher_ManageDAO.Instance.LoadDataStudent(IdAccount);
         }
     }
 }

@@ -28,22 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.label_Name = new System.Windows.Forms.Label();
             this.btn_Exit = new System.Windows.Forms.Button();
             this.btn_ShowMark = new System.Windows.Forms.Button();
             this.btn_info = new System.Windows.Forms.Button();
             this.btn_ManageStudent = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // label1
+            // label_Name
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 19);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "label1";
+            this.label_Name.AutoSize = true;
+            this.label_Name.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Name.Location = new System.Drawing.Point(12, 9);
+            this.label_Name.Name = "label_Name";
+            this.label_Name.Size = new System.Drawing.Size(51, 19);
+            this.label_Name.TabIndex = 9;
+            this.label_Name.Text = "label1";
             // 
             // btn_Exit
             // 
@@ -95,7 +95,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 428);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.label_Name);
             this.Controls.Add(this.btn_Exit);
             this.Controls.Add(this.btn_ShowMark);
             this.Controls.Add(this.btn_ManageStudent);
@@ -104,6 +104,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý học sinh";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.fTeacher_Main_FormClosed);
+            this.Load += new System.EventHandler(this.fTeacher_Main_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -111,7 +112,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label_Name;
         private System.Windows.Forms.Button btn_Exit;
         private System.Windows.Forms.Button btn_ShowMark;
         private System.Windows.Forms.Button btn_info;

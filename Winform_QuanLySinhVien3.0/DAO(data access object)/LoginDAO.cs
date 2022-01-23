@@ -31,10 +31,9 @@ namespace Winform_QuanLySinhVien3._0.DAO
                 DataTable data = DataProvider.Instance.ExecuteQuery("SELECT * FROM Account WHERE Username = @Username  and Password = @Password ", parameter);
                 Account account = new Account(data.Rows[0]);
                 return account.Type;
-            }
+            }           
             return -1;
         }
-
         public bool CheckAccount(string Username, string Password)
         {
             object[] parameter = new object[] { Username, Password };
@@ -43,6 +42,13 @@ namespace Winform_QuanLySinhVien3._0.DAO
             if (result > 0)
                 return true;
             return false;
+        }
+        public int GetIdAccount(string Username, string Password)
+        {
+            object[] parameter = new object[] { Username, Password };
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT * FROM Account WHERE Username = @Username  and Password = @Password ", parameter);
+            Account account = new Account(data.Rows[0]);
+            return account.ID;
         }
 
     }

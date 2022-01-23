@@ -12,13 +12,12 @@ namespace Winform_QuanLySinhVien3._0
 {
     public partial class fTeacher_Main : Form
     {
-        public fTeacher_Main()
+        private int idAccount;
+        public fTeacher_Main(int idAccount)
         {
             InitializeComponent();
+            this.idAccount = idAccount;
         }
-
-      
-
         private void btn_Exit_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -33,7 +32,7 @@ namespace Winform_QuanLySinhVien3._0
 
         private void btn_ShowMark_Click(object sender, EventArgs e)
         {
-            fTeacher_Mark f = new fTeacher_Mark();
+            fTeacher_Mark f = new fTeacher_Mark(idAccount);
             this.Hide();
             f.ShowDialog();
             this.Show();
@@ -49,10 +48,23 @@ namespace Winform_QuanLySinhVien3._0
 
         private void btn_ManageStudent_Click(object sender, EventArgs e)
         {
-            fTeacher_MagageStudent f = new fTeacher_MagageStudent();
+            fTeacher_MagageStudent f = new fTeacher_MagageStudent(idAccount);
             this.Hide();
             f.ShowDialog();
             this.Show();
         }
+        private void fTeacher_Main_Load(object sender, EventArgs e)
+        {
+            label_Name.Text = DAOGetName(idAccount);
+        }
+
+        private string DAOGetName(int idAccount)
+        {
+            object[] parameter = new object[] { idAccount.ToString() };
+            string data = (string)DataProvider.Instance.ExecuteScalar("SELECT name FROM Teacher WHERE idAccount = @idAccount ", parameter);
+            return data;
+        }
+
+       
     }
 }

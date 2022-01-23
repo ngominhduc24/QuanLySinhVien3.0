@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txt_FindID = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.txt_FindName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.cbb_FindClass = new System.Windows.Forms.ComboBox();
             this.btn_Exit = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.btn_ReplaceInfo = new System.Windows.Forms.Button();
             this.datagrid_Mark = new System.Windows.Forms.DataGridView();
-            this.txt_FindID = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datagrid_Mark)).BeginInit();
             this.SuspendLayout();
@@ -59,6 +59,23 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(973, 539);
             this.panel1.TabIndex = 43;
+            // 
+            // txt_FindID
+            // 
+            this.txt_FindID.Location = new System.Drawing.Point(276, 18);
+            this.txt_FindID.Name = "txt_FindID";
+            this.txt_FindID.Size = new System.Drawing.Size(177, 22);
+            this.txt_FindID.TabIndex = 47;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(81, 18);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(159, 22);
+            this.label2.TabIndex = 46;
+            this.label2.Text = "Tìm kiếm theo ID :";
             // 
             // txt_FindName
             // 
@@ -105,6 +122,15 @@
             this.btn_Exit.UseVisualStyleBackColor = true;
             this.btn_Exit.Click += new System.EventHandler(this.btn_Exit_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(445, 456);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(131, 64);
+            this.button1.TabIndex = 39;
+            this.button1.Text = "Tìm kiếm";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // btn_ReplaceInfo
             // 
             this.btn_ReplaceInfo.Location = new System.Drawing.Point(609, 456);
@@ -124,32 +150,6 @@
             this.datagrid_Mark.Size = new System.Drawing.Size(872, 326);
             this.datagrid_Mark.TabIndex = 38;
             // 
-            // txt_FindID
-            // 
-            this.txt_FindID.Location = new System.Drawing.Point(276, 18);
-            this.txt_FindID.Name = "txt_FindID";
-            this.txt_FindID.Size = new System.Drawing.Size(177, 22);
-            this.txt_FindID.TabIndex = 47;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(81, 18);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(159, 22);
-            this.label2.TabIndex = 46;
-            this.label2.Text = "Tìm kiếm theo ID :";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(445, 456);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(131, 64);
-            this.button1.TabIndex = 39;
-            this.button1.Text = "Tìm kiếm";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // fTeacher_MagageStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -160,6 +160,7 @@
             this.Name = "fTeacher_MagageStudent";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fTeacher_MagageStudent";
+            this.Load += new System.EventHandler(this.fTeacher_MagageStudent_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datagrid_Mark)).EndInit();

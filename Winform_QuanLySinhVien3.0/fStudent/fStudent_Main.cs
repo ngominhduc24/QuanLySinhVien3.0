@@ -12,10 +12,11 @@ namespace Winform_QuanLySinhVien3._0
 {
     public partial class fStudent_Main : Form
     {
-        public fStudent_Main()
+        private int idAccount;
+        public fStudent_Main(int idAccount)
         {
             InitializeComponent();
-            label1.Text = "Hello duc";
+            this.idAccount = idAccount;
         }
 
         private void fStudent_Main_FormClosed(object sender, FormClosedEventArgs e)
@@ -33,7 +34,7 @@ namespace Winform_QuanLySinhVien3._0
 
         private void btn_ShowMark_Click(object sender, EventArgs e)
         {
-            fStudent_Mark f = new fStudent_Mark();
+            fStudent_Mark f = new fStudent_Mark(idAccount);
             this.Hide();
             f.ShowDialog();
             this.Show();
@@ -51,6 +52,18 @@ namespace Winform_QuanLySinhVien3._0
             this.Hide();
             f.ShowDialog();
             this.Show();
+        }
+
+        private void fStudent_Main_Load(object sender, EventArgs e)
+        {
+            label_Name.Text = DAOGetName(idAccount);
+        }
+
+        private string DAOGetName(int idAccount)
+        {
+            object[] parameter = new object[] { idAccount.ToString() };
+            string data = (string)DataProvider.Instance.ExecuteScalar("SELECT name FROM Student WHERE idAccount = @idAccount ", parameter);
+            return data;
         }
     }
 }

@@ -24,7 +24,7 @@ namespace Winform_QuanLySinhVien3._0
         }
         private void btn_Login_Click(object sender, EventArgs e)
         {
-            int TypeAccount = LoginDAO.Instance.GetTypeAccount(txt_UserName.Text, txt_Password.Text);
+            int TypeAccount = LoginDAO.Instance.GetTypeAccount(txt_Username.Text, txt_Password.Text);
             CheckAccountAndLogin(TypeAccount);
         }
         private void btn_Exit_Click(object sender, EventArgs e)
@@ -35,71 +35,36 @@ namespace Winform_QuanLySinhVien3._0
         {
             if (e.KeyCode == Keys.Enter)
             {
-                 e.SuppressKeyPress = true;
+                e.SuppressKeyPress = true;
                 btn_Login.PerformClick();
-            }    
+            }
         }
 
-       
 
-        private void btn_Login_Click(object sender, EventArgs e)
         /// <summary>
         /// truyền vào loại account kiểm tra | -1 là nhập sai|1 là giáo viên;|2 là học sinh 
         /// </summary>
         /// <param name="TypeAccount"></param>
         private void CheckAccountAndLogin(int TypeAccount)
         {
-            int type = GetTypeAccount();
-            if (type == 1)
+            int idAccount = LoginDAO.Instance.GetIdAccount(txt_Username.Text, txt_Password.Text);
+
+            if (TypeAccount == 1)
             {
-                fTeacher_Main f = new fTeacher_Main();
+                fTeacher_Main f = new fTeacher_Main(idAccount);
                 this.Hide();
                 f.Show();
             }
-            else if (type == 2)
+            else if (TypeAccount == 2)
             {
-                fStudent_Main f = new fStudent_Main();
+                fStudent_Main f = new fStudent_Main(idAccount);
                 this.Hide();
                 f.Show();
             }
-            else if (type == -1)
+            else if (TypeAccount == -1)
                 MessageBox.Show("mời bạn nhập lại");
-            
+
         }
-
-    
-        private void btn_Exit_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        #endregion
-
-        #region method
-
-        private int GetTypeAccount() // cai nay la cua DAO
-        {
-             if (CheckAccount())
-             {
-                object[] parameter = new object[] { txt_UserName.Text, txt_Password.Text };
-                DataTable data = DataProvider.Instance.ExecuteQuery("SELECT * FROM Account WHERE Username = @Username  and Password = @Password ", parameter);
-                DataRow dataRow = data.Rows[0];
-                int type = (int)dataRow["Type"];
-                return type;
-             }
-            return -1   ;
-        }
-
-        private bool CheckAccount()
-        {
-            object[] parameter = new object[] { txt_UserName.Text, txt_Password.Text }; 
-            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT * FROM Account WHERE Username = @Username  and Password = @Password ",parameter);         
-            int result = data.Rows.Count;
-            if (result > 0)
-                return true;
-            return false;
-        }
-
-        #endregion
     }
+
 }

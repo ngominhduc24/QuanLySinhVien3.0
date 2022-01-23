@@ -46,7 +46,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DAL%28data access layer%29\LoginDAO.cs" />
+    <Compile Include="DAO%28data access object%29\LoginDAO.cs" />
+    <Compile Include="DAO%28data access object%29\Student_MarkDAO.cs" />
+    <Compile Include="DAO%28data access object%29\Teacher_ManageDAO.cs" />
+    <Compile Include="DAO%28data access object%29\Teacher_MarkDAO.cs" />
     <Compile Include="DataProvider.cs" />
     <Compile Include="DTO%28data transfer object%29\Account.cs" />
     <Compile Include="flogin.cs">

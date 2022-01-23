@@ -155,6 +155,7 @@
             this.Name = "fStudent_Mark";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Xem điểm";
+            this.Load += new System.EventHandler(this.fStudent_Mark_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datagrid_Mark)).EndInit();

@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btn_Exit = new System.Windows.Forms.Button();
-            this.btn_ReplaceMark = new System.Windows.Forms.Button();
-            this.datagrid_Mark = new System.Windows.Forms.DataGridView();
             this.txt_FindID = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txt_FindName = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.cbb_FindClass = new System.Windows.Forms.ComboBox();
+            this.btn_Exit = new System.Windows.Forms.Button();
+            this.btn_ReplaceMark = new System.Windows.Forms.Button();
+            this.datagrid_Mark = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datagrid_Mark)).BeginInit();
             this.SuspendLayout();
@@ -57,35 +57,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(973, 539);
             this.panel1.TabIndex = 42;
-            // 
-            // btn_Exit
-            // 
-            this.btn_Exit.Location = new System.Drawing.Point(771, 456);
-            this.btn_Exit.Name = "btn_Exit";
-            this.btn_Exit.Size = new System.Drawing.Size(131, 64);
-            this.btn_Exit.TabIndex = 40;
-            this.btn_Exit.Text = "Thoát";
-            this.btn_Exit.UseVisualStyleBackColor = true;
-            this.btn_Exit.Click += new System.EventHandler(this.btn_Exit_Click);
-            // 
-            // btn_ReplaceMark
-            // 
-            this.btn_ReplaceMark.Location = new System.Drawing.Point(609, 456);
-            this.btn_ReplaceMark.Name = "btn_ReplaceMark";
-            this.btn_ReplaceMark.Size = new System.Drawing.Size(131, 64);
-            this.btn_ReplaceMark.TabIndex = 39;
-            this.btn_ReplaceMark.Text = "Lưu điểm";
-            this.btn_ReplaceMark.UseVisualStyleBackColor = true;
-            // 
-            // datagrid_Mark
-            // 
-            this.datagrid_Mark.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.datagrid_Mark.Location = new System.Drawing.Point(57, 114);
-            this.datagrid_Mark.Name = "datagrid_Mark";
-            this.datagrid_Mark.RowHeadersWidth = 51;
-            this.datagrid_Mark.RowTemplate.Height = 24;
-            this.datagrid_Mark.Size = new System.Drawing.Size(872, 326);
-            this.datagrid_Mark.TabIndex = 38;
             // 
             // txt_FindID
             // 
@@ -139,6 +110,35 @@
             this.cbb_FindClass.Size = new System.Drawing.Size(101, 24);
             this.cbb_FindClass.TabIndex = 48;
             // 
+            // btn_Exit
+            // 
+            this.btn_Exit.Location = new System.Drawing.Point(771, 456);
+            this.btn_Exit.Name = "btn_Exit";
+            this.btn_Exit.Size = new System.Drawing.Size(131, 64);
+            this.btn_Exit.TabIndex = 40;
+            this.btn_Exit.Text = "Thoát";
+            this.btn_Exit.UseVisualStyleBackColor = true;
+            this.btn_Exit.Click += new System.EventHandler(this.btn_Exit_Click);
+            // 
+            // btn_ReplaceMark
+            // 
+            this.btn_ReplaceMark.Location = new System.Drawing.Point(609, 456);
+            this.btn_ReplaceMark.Name = "btn_ReplaceMark";
+            this.btn_ReplaceMark.Size = new System.Drawing.Size(131, 64);
+            this.btn_ReplaceMark.TabIndex = 39;
+            this.btn_ReplaceMark.Text = "Lưu điểm";
+            this.btn_ReplaceMark.UseVisualStyleBackColor = true;
+            // 
+            // datagrid_Mark
+            // 
+            this.datagrid_Mark.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.datagrid_Mark.Location = new System.Drawing.Point(25, 114);
+            this.datagrid_Mark.Name = "datagrid_Mark";
+            this.datagrid_Mark.RowHeadersWidth = 51;
+            this.datagrid_Mark.RowTemplate.Height = 24;
+            this.datagrid_Mark.Size = new System.Drawing.Size(911, 326);
+            this.datagrid_Mark.TabIndex = 38;
+            // 
             // fTeacher_Mark
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -149,6 +149,7 @@
             this.Name = "fTeacher_Mark";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fTeacher_Mark";
+            this.Load += new System.EventHandler(this.fTeacher_Mark_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datagrid_Mark)).EndInit();
