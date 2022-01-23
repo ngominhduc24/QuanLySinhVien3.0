@@ -35,6 +35,11 @@ namespace Winform_QuanLySinhVien3._0.DAO
             return -1;
         }
 
+        internal int GetTypeAccount(object text1, object text2)
+        {
+            throw new NotImplementedException();
+        }
+
         public bool CheckAccount(string Username, string Password)
         {
             object[] parameter = new object[] { Username, Password };

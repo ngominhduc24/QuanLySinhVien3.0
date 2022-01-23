@@ -35,6 +35,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.txt_Username = new System.Windows.Forms.TextBox();
+            this.txt_Password = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // textBox1
@@ -102,19 +104,34 @@
             this.label1.TabIndex = 34;
             this.label1.Text = "Mật khẩu :";
             // 
+            // txt_Username
+            // 
+            this.txt_Username.Location = new System.Drawing.Point(271, 110);
+            this.txt_Username.Name = "txt_Username";
+            this.txt_Username.Size = new System.Drawing.Size(197, 22);
+            this.txt_Username.TabIndex = 0;
+            // 
+            // txt_Password
+            // 
+            this.txt_Password.Location = new System.Drawing.Point(271, 160);
+            this.txt_Password.Name = "txt_Password";
+            this.txt_Password.PasswordChar = '●';
+            this.txt_Password.Size = new System.Drawing.Size(197, 22);
+            this.txt_Password.TabIndex = 1;
+            // 
             // flogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(592, 394);
+            this.Controls.Add(this.txt_Password);
+            this.Controls.Add(this.txt_Username);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btn_Exit);
             this.Controls.Add(this.btn_Login);
-            this.Controls.Add(this.txt_Password);
-            this.Controls.Add(this.txt_UserName);
             this.KeyPreview = true;
             this.Name = "flogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -135,6 +152,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txt_Username;
+        private System.Windows.Forms.TextBox txt_Password;
     }
 }
 
