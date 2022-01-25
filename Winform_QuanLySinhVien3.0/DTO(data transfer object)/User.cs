@@ -16,7 +16,7 @@ namespace Winform_QuanLySinhVien3._0.DTO_data_transfer_object_
             this.specialized = Data["specialized"].ToString();
             this.sex = Data["sex"].ToString();
             this.dateofbirth = (DateTime)Data["Dateofbirth"];
-            if ( Data["id"] != null )
+            if (Data.Table.Columns.Count > 5)
             {
                 this.idstudent = Data["id"].ToString();
             }

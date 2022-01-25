@@ -47,22 +47,29 @@ namespace Winform_QuanLySinhVien3._0
         /// <param name="TypeAccount"></param>
         private void CheckAccountAndLogin(int TypeAccount)
         {
-            int idAccount = LoginDAO.Instance.GetIdAccount(txt_Username.Text, txt_Password.Text);
-
-            if (TypeAccount == 1)
+            if ( LoginDAO.Instance.CheckAccount(txt_Username.Text, txt_Password.Text) == false )
             {
-                fTeacher_Main f = new fTeacher_Main(idAccount);
-                this.Hide();
-                f.Show();
-            }
-            else if (TypeAccount == 2)
-            {
-                fStudent_Main f = new fStudent_Main(idAccount);
-                this.Hide();
-                f.Show();
-            }
-            else if (TypeAccount == -1)
                 MessageBox.Show("mời bạn nhập lại");
+            }
+            else
+            {
+                int idAccount = LoginDAO.Instance.GetIdAccount(txt_Username.Text, txt_Password.Text);
+
+                if (TypeAccount == 1)
+                {
+                    fTeacher_Main f = new fTeacher_Main(idAccount);
+                    this.Hide();
+                    f.Show();
+                }
+                else if (TypeAccount == 2)
+                {
+                    fStudent_Main f = new fStudent_Main(idAccount);
+                    this.Hide();
+                    f.Show();
+                }
+            }
+            
+                
 
         }
     }

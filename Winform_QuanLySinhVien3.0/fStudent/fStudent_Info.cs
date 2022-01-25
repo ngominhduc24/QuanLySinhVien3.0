@@ -46,7 +46,6 @@ namespace Winform_QuanLySinhVien3._0
         {
             this.Close();
         }
-
         private void btn_Exit2_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -65,5 +64,7 @@ namespace Winform_QuanLySinhVien3._0
             FillDataAccount();
             FillDataUser();
         }
+
+        
     }
 }

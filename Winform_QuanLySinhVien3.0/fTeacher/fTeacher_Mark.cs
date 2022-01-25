@@ -28,5 +28,11 @@ namespace Winform_QuanLySinhVien3._0
         {
             datagrid_Mark.DataSource = Teacher_MarkDAO.Instance.LoadDataMark(idAccount);
         }
+
+        private void btn_Find_Click(object sender, EventArgs e)
+        {
+          //  datagrid_Mark.DataSource = Teacher_MarkDAO.Instance.FindData(txt_FindID.Text.Trim(), txt_FindName.Text.Trim(), cbb_FindClass.Text.Trim());
+          // bug not fixed
+        }
     }
 }

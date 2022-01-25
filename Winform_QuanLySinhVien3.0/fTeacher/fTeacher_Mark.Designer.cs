@@ -38,6 +38,7 @@
             this.btn_Exit = new System.Windows.Forms.Button();
             this.btn_ReplaceMark = new System.Windows.Forms.Button();
             this.datagrid_Mark = new System.Windows.Forms.DataGridView();
+            this.btn_Find = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datagrid_Mark)).BeginInit();
             this.SuspendLayout();
@@ -51,6 +52,7 @@
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.cbb_FindClass);
             this.panel1.Controls.Add(this.btn_Exit);
+            this.panel1.Controls.Add(this.btn_Find);
             this.panel1.Controls.Add(this.btn_ReplaceMark);
             this.panel1.Controls.Add(this.datagrid_Mark);
             this.panel1.Location = new System.Drawing.Point(12, 15);
@@ -139,6 +141,16 @@
             this.datagrid_Mark.Size = new System.Drawing.Size(911, 326);
             this.datagrid_Mark.TabIndex = 38;
             // 
+            // btn_Find
+            // 
+            this.btn_Find.Location = new System.Drawing.Point(444, 456);
+            this.btn_Find.Name = "btn_Find";
+            this.btn_Find.Size = new System.Drawing.Size(131, 64);
+            this.btn_Find.TabIndex = 39;
+            this.btn_Find.Text = "Tìm kiếm";
+            this.btn_Find.UseVisualStyleBackColor = true;
+            this.btn_Find.Click += new System.EventHandler(this.btn_Find_Click);
+            // 
             // fTeacher_Mark
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -169,5 +181,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cbb_FindClass;
+        private System.Windows.Forms.Button btn_Find;
     }
 }

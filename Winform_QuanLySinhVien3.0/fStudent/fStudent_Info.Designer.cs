@@ -242,6 +242,7 @@
             this.btn_Exit2.TabIndex = 37;
             this.btn_Exit2.Text = "thoát";
             this.btn_Exit2.UseVisualStyleBackColor = true;
+            this.btn_Exit2.Click += new System.EventHandler(this.btn_Exit2_Click);
             // 
             // btn_UpdatePassword
             // 
