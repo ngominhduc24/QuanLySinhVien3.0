@@ -30,7 +30,6 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.btn_UpdateInfo = new System.Windows.Forms.Button();
             this.btn_Exit = new System.Windows.Forms.Button();
             this.dtpk_DateOfBirth = new System.Windows.Forms.DateTimePicker();
             this.txt_Specialized = new System.Windows.Forms.TextBox();
@@ -45,7 +44,7 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.txt_Password = new System.Windows.Forms.TextBox();
             this.txt_UserName = new System.Windows.Forms.TextBox();
-            this.txt_Account = new System.Windows.Forms.TextBox();
+            this.txt_TypeAccount = new System.Windows.Forms.TextBox();
             this.btn_Exit2 = new System.Windows.Forms.Button();
             this.btn_UpdatePassword = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
@@ -70,7 +69,6 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.tabPage1.Controls.Add(this.btn_UpdateInfo);
             this.tabPage1.Controls.Add(this.btn_Exit);
             this.tabPage1.Controls.Add(this.dtpk_DateOfBirth);
             this.tabPage1.Controls.Add(this.txt_Specialized);
@@ -88,15 +86,6 @@
             this.tabPage1.Size = new System.Drawing.Size(513, 435);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Thông tin cá nhân";
-            // 
-            // btn_UpdateInfo
-            // 
-            this.btn_UpdateInfo.Location = new System.Drawing.Point(189, 353);
-            this.btn_UpdateInfo.Name = "btn_UpdateInfo";
-            this.btn_UpdateInfo.Size = new System.Drawing.Size(113, 53);
-            this.btn_UpdateInfo.TabIndex = 34;
-            this.btn_UpdateInfo.Text = "Cập nhật";
-            this.btn_UpdateInfo.UseVisualStyleBackColor = true;
             // 
             // btn_Exit
             // 
@@ -206,7 +195,7 @@
             this.tabPage2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.tabPage2.Controls.Add(this.txt_Password);
             this.tabPage2.Controls.Add(this.txt_UserName);
-            this.tabPage2.Controls.Add(this.txt_Account);
+            this.tabPage2.Controls.Add(this.txt_TypeAccount);
             this.tabPage2.Controls.Add(this.btn_Exit2);
             this.tabPage2.Controls.Add(this.btn_UpdatePassword);
             this.tabPage2.Controls.Add(this.label8);
@@ -236,14 +225,14 @@
             this.txt_UserName.Size = new System.Drawing.Size(197, 30);
             this.txt_UserName.TabIndex = 40;
             // 
-            // txt_Account
+            // txt_TypeAccount
             // 
-            this.txt_Account.Enabled = false;
-            this.txt_Account.Location = new System.Drawing.Point(206, 62);
-            this.txt_Account.Name = "txt_Account";
-            this.txt_Account.ReadOnly = true;
-            this.txt_Account.Size = new System.Drawing.Size(197, 30);
-            this.txt_Account.TabIndex = 39;
+            this.txt_TypeAccount.Enabled = false;
+            this.txt_TypeAccount.Location = new System.Drawing.Point(206, 62);
+            this.txt_TypeAccount.Name = "txt_TypeAccount";
+            this.txt_TypeAccount.ReadOnly = true;
+            this.txt_TypeAccount.Size = new System.Drawing.Size(197, 30);
+            this.txt_TypeAccount.TabIndex = 39;
             // 
             // btn_Exit2
             // 
@@ -304,6 +293,7 @@
             this.Name = "fStudent_Info";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fStudent_Info";
+            this.Load += new System.EventHandler(this.fStudent_Info_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -336,7 +326,6 @@
         private System.Windows.Forms.Button btn_UpdatePassword;
         private System.Windows.Forms.TextBox txt_Password;
         private System.Windows.Forms.TextBox txt_UserName;
-        private System.Windows.Forms.TextBox txt_Account;
-        private System.Windows.Forms.Button btn_UpdateInfo;
+        private System.Windows.Forms.TextBox txt_TypeAccount;
     }
 }

@@ -43,7 +43,7 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.txt_Password = new System.Windows.Forms.TextBox();
             this.txt_UserName = new System.Windows.Forms.TextBox();
-            this.txt_Account = new System.Windows.Forms.TextBox();
+            this.txt_TypeAccount = new System.Windows.Forms.TextBox();
             this.btn_Exit2 = new System.Windows.Forms.Button();
             this.btn_UpdatePassword = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
@@ -180,7 +180,7 @@
             this.tabPage2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.tabPage2.Controls.Add(this.txt_Password);
             this.tabPage2.Controls.Add(this.txt_UserName);
-            this.tabPage2.Controls.Add(this.txt_Account);
+            this.tabPage2.Controls.Add(this.txt_TypeAccount);
             this.tabPage2.Controls.Add(this.btn_Exit2);
             this.tabPage2.Controls.Add(this.btn_UpdatePassword);
             this.tabPage2.Controls.Add(this.label8);
@@ -208,19 +208,19 @@
             this.txt_UserName.Size = new System.Drawing.Size(197, 30);
             this.txt_UserName.TabIndex = 40;
             // 
-            // txt_Account
+            // txt_TypeAccount
             // 
-            this.txt_Account.Enabled = false;
-            this.txt_Account.Location = new System.Drawing.Point(206, 62);
-            this.txt_Account.Name = "txt_Account";
-            this.txt_Account.Size = new System.Drawing.Size(197, 30);
-            this.txt_Account.TabIndex = 39;
+            this.txt_TypeAccount.Enabled = false;
+            this.txt_TypeAccount.Location = new System.Drawing.Point(206, 62);
+            this.txt_TypeAccount.Name = "txt_TypeAccount";
+            this.txt_TypeAccount.Size = new System.Drawing.Size(197, 30);
+            this.txt_TypeAccount.TabIndex = 39;
             // 
             // btn_Exit2
             // 
             this.btn_Exit2.Location = new System.Drawing.Point(304, 325);
             this.btn_Exit2.Name = "btn_Exit2";
-            this.btn_Exit2.Size = new System.Drawing.Size(117, 55);
+            this.btn_Exit2.Size = new System.Drawing.Size(121, 62);
             this.btn_Exit2.TabIndex = 37;
             this.btn_Exit2.Text = "thoát";
             this.btn_Exit2.UseVisualStyleBackColor = true;
@@ -230,7 +230,7 @@
             // 
             this.btn_UpdatePassword.Location = new System.Drawing.Point(90, 325);
             this.btn_UpdatePassword.Name = "btn_UpdatePassword";
-            this.btn_UpdatePassword.Size = new System.Drawing.Size(117, 55);
+            this.btn_UpdatePassword.Size = new System.Drawing.Size(121, 62);
             this.btn_UpdatePassword.TabIndex = 36;
             this.btn_UpdatePassword.Text = "Đổi mật khẩu";
             this.btn_UpdatePassword.UseVisualStyleBackColor = true;
@@ -276,6 +276,7 @@
             this.Name = "fTeacher_Info";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fTeacher_Info";
+            this.Load += new System.EventHandler(this.fTeacher_Info_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -301,7 +302,7 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TextBox txt_Password;
         private System.Windows.Forms.TextBox txt_UserName;
-        private System.Windows.Forms.TextBox txt_Account;
+        private System.Windows.Forms.TextBox txt_TypeAccount;
         private System.Windows.Forms.Button btn_Exit2;
         private System.Windows.Forms.Button btn_UpdatePassword;
         private System.Windows.Forms.Label label8;

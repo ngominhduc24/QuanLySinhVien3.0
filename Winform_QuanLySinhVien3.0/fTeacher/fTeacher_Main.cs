@@ -40,7 +40,7 @@ namespace Winform_QuanLySinhVien3._0
 
         private void btn_info_Click(object sender, EventArgs e)
         {
-            fTeacher_Info f = new fTeacher_Info();
+            fTeacher_Info f = new fTeacher_Info(idAccount);
             this.Hide();
             f.ShowDialog();
             this.Show();
@@ -53,6 +53,7 @@ namespace Winform_QuanLySinhVien3._0
             f.ShowDialog();
             this.Show();
         }
+
         private void fTeacher_Main_Load(object sender, EventArgs e)
         {
             label_Name.Text = DAOGetName(idAccount);

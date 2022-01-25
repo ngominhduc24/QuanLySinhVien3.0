@@ -75,7 +75,7 @@
             this.btn_Exit.Name = "btn_Exit";
             this.btn_Exit.Size = new System.Drawing.Size(222, 118);
             this.btn_Exit.TabIndex = 3;
-            this.btn_Exit.Text = "Thoát";
+            this.btn_Exit.Text = "Đăng xuất";
             this.btn_Exit.UseVisualStyleBackColor = false;
             this.btn_Exit.Click += new System.EventHandler(this.btn_Exit_Click);
             // 
