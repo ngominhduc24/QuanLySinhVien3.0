@@ -36,9 +36,9 @@ namespace Winform_QuanLySinhVien3._0
             txt_Password.Text = account.Password;
 
             if (account.Type == 1)
-                { txt_TypeAccount.Text = "Giáo viên"; }
+            { txt_TypeAccount.Text = "Giáo viên"; }
             else if (account.Type == 2)
-                { txt_TypeAccount.Text = "Học sinh"; }
+            { txt_TypeAccount.Text = "Học sinh"; }
         }
 
         private void btn_Exit_Click(object sender, EventArgs e)
@@ -53,7 +53,7 @@ namespace Winform_QuanLySinhVien3._0
 
         private void btn_UpdatePassword_Click(object sender, EventArgs e)
         {
-            fUpdatePassword f = new fUpdatePassword();
+            fUpdatePassword f = new fUpdatePassword(idAccount);
             this.Hide();
             f.ShowDialog();
             this.Show();
@@ -65,6 +65,18 @@ namespace Winform_QuanLySinhVien3._0
             FillDataAccount();
         }
 
-
+        private void btn_UpdateInfo_Click(object sender, EventArgs e)
+        {
+            User user = new User(txt_Name.Text, txt_Specialized.Text, txt_Sex.Text, dtpk_DateOfBirth.Value );         
+            if (InfoDAO.Instance.UpdateInfo(idAccount, user))
+            {
+                MessageBox.Show("đổi thông tin thành công", "Thông báo");
+            }
+            else
+            {
+                MessageBox.Show("đổi thông tin không thành công", "Thông báo");
+            }
+            FillDataUser();
+        }
     }
 }

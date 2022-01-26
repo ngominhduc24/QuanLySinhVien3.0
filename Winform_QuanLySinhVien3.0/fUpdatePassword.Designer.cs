@@ -28,42 +28,43 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txt_Password = new System.Windows.Forms.TextBox();
+            this.txt_OldPassword = new System.Windows.Forms.TextBox();
             this.btn_Exit2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.bnt_updatePassword = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_ConfirmPassword = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txt_NewPassword = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // txt_Password
+            // txt_OldPassword
             // 
-            this.txt_Password.Location = new System.Drawing.Point(241, 28);
-            this.txt_Password.Name = "txt_Password";
-            this.txt_Password.PasswordChar = '●';
-            this.txt_Password.Size = new System.Drawing.Size(197, 22);
-            this.txt_Password.TabIndex = 45;
+            this.txt_OldPassword.Location = new System.Drawing.Point(241, 28);
+            this.txt_OldPassword.Name = "txt_OldPassword";
+            this.txt_OldPassword.PasswordChar = '●';
+            this.txt_OldPassword.Size = new System.Drawing.Size(197, 22);
+            this.txt_OldPassword.TabIndex = 0;
             // 
             // btn_Exit2
             // 
             this.btn_Exit2.Location = new System.Drawing.Point(293, 228);
             this.btn_Exit2.Name = "btn_Exit2";
             this.btn_Exit2.Size = new System.Drawing.Size(117, 55);
-            this.btn_Exit2.TabIndex = 44;
+            this.btn_Exit2.TabIndex = 4;
             this.btn_Exit2.Text = "thoát";
             this.btn_Exit2.UseVisualStyleBackColor = true;
             this.btn_Exit2.Click += new System.EventHandler(this.btn_Exit2_Click);
             // 
-            // button1
+            // bnt_updatePassword
             // 
-            this.button1.Location = new System.Drawing.Point(79, 228);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(117, 55);
-            this.button1.TabIndex = 43;
-            this.button1.Text = "Đổi mật khẩu";
-            this.button1.UseVisualStyleBackColor = true;
+            this.bnt_updatePassword.Location = new System.Drawing.Point(79, 228);
+            this.bnt_updatePassword.Name = "bnt_updatePassword";
+            this.bnt_updatePassword.Size = new System.Drawing.Size(117, 55);
+            this.bnt_updatePassword.TabIndex = 3;
+            this.bnt_updatePassword.Text = "Đổi mật khẩu";
+            this.bnt_updatePassword.UseVisualStyleBackColor = true;
+            this.bnt_updatePassword.Click += new System.EventHandler(this.bnt_updatePassword_Click);
             // 
             // label8
             // 
@@ -75,13 +76,13 @@
             this.label8.TabIndex = 42;
             this.label8.Text = "Mật khẩu cũ :";
             // 
-            // textBox1
+            // txt_ConfirmPassword
             // 
-            this.textBox1.Location = new System.Drawing.Point(241, 154);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.PasswordChar = '●';
-            this.textBox1.Size = new System.Drawing.Size(197, 22);
-            this.textBox1.TabIndex = 47;
+            this.txt_ConfirmPassword.Location = new System.Drawing.Point(241, 154);
+            this.txt_ConfirmPassword.Name = "txt_ConfirmPassword";
+            this.txt_ConfirmPassword.PasswordChar = '●';
+            this.txt_ConfirmPassword.Size = new System.Drawing.Size(197, 22);
+            this.txt_ConfirmPassword.TabIndex = 2;
             // 
             // label1
             // 
@@ -93,13 +94,13 @@
             this.label1.TabIndex = 46;
             this.label1.Text = "Xác nhận mật khẩu :";
             // 
-            // textBox2
+            // txt_NewPassword
             // 
-            this.textBox2.Location = new System.Drawing.Point(241, 90);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.PasswordChar = '●';
-            this.textBox2.Size = new System.Drawing.Size(197, 22);
-            this.textBox2.TabIndex = 49;
+            this.txt_NewPassword.Location = new System.Drawing.Point(241, 90);
+            this.txt_NewPassword.Name = "txt_NewPassword";
+            this.txt_NewPassword.PasswordChar = '●';
+            this.txt_NewPassword.Size = new System.Drawing.Size(197, 22);
+            this.txt_NewPassword.TabIndex = 1;
             // 
             // label2
             // 
@@ -116,13 +117,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(495, 328);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txt_NewPassword);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txt_ConfirmPassword);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txt_Password);
+            this.Controls.Add(this.txt_OldPassword);
             this.Controls.Add(this.btn_Exit2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.bnt_updatePassword);
             this.Controls.Add(this.label8);
             this.Name = "fUpdatePassword";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -134,13 +135,13 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox txt_Password;
+        private System.Windows.Forms.TextBox txt_OldPassword;
         private System.Windows.Forms.Button btn_Exit2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button bnt_updatePassword;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txt_ConfirmPassword;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txt_NewPassword;
         private System.Windows.Forms.Label label2;
     }
 }

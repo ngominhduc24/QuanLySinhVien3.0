@@ -30,13 +30,13 @@ namespace Winform_QuanLySinhVien3._0.DAO_data_access_object_
         public DataTable FindData(string idFind  , string nameFind , string subjectFind )
         {
             DataTable data = new DataTable();
-            if ( idFind != "" ) { idFind = "idstudent LIKE N'%" + idFind +"%' "; }
-            if ( nameFind != "" ) { nameFind = "AND name LIKE N'%" + nameFind + "%' "; }
-            if (subjectFind != "" ) { subjectFind = "AND subject LIKE N%" + subjectFind + "%'"; }
+            if ( idFind != "" ) { idFind = "idstudent LIKE N'%" + idFind +"%' "; } else  idFind = " "; 
+            if (nameFind != "") { nameFind = "AND name LIKE N'%" + nameFind + "%' "; } else nameFind = " ";
+            if (subjectFind != "" ) { subjectFind = "AND subject LIKE N%" + subjectFind + "%'"; } else subjectFind = " ";
             object[] parameter = new object[] { idFind, nameFind, subjectFind };
             try
             {
-                 data = DataProvider.Instance.ExecuteQuery(" SELECT  student.name, student.specialized ,student.dateofbirth  ,mark.* FROM Mark , Student  WHERE Mark.idstudent = student.id AND	@id @name @subject ", parameter);
+                 data = DataProvider.Instance.ExecuteQuery(" SELECT  student.name, student.specialized ,student.dateofbirth  ,mark.* FROM Mark , Student  WHERE Mark.idstudent = student.id AND	"+idFind+ " " + nameFind + " " + subjectFind + " ");
             } 
             catch (Exception)
             {
@@ -45,6 +45,6 @@ namespace Winform_QuanLySinhVien3._0.DAO_data_access_object_
             }
             
             return data;
-        }
+        } // chưa sửa xong , không truyền được parameter(tạo procedure trong sql)
     }
 }

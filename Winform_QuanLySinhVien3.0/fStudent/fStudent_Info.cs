@@ -53,7 +53,7 @@ namespace Winform_QuanLySinhVien3._0
 
         private void btn_UpdatePassword_Click(object sender, EventArgs e)
         {
-            fUpdatePassword f = new fUpdatePassword();
+            fUpdatePassword f = new fUpdatePassword(idAccount);
             this.Hide();
             f.ShowDialog();
             this.Show();

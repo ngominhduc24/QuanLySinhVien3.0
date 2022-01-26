@@ -93,6 +93,7 @@
             this.btn_UpdateInfo.TabIndex = 35;
             this.btn_UpdateInfo.Text = "Cập nhật";
             this.btn_UpdateInfo.UseVisualStyleBackColor = true;
+            this.btn_UpdateInfo.Click += new System.EventHandler(this.btn_UpdateInfo_Click);
             // 
             // btn_Exit
             // 

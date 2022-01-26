@@ -49,7 +49,7 @@ namespace Winform_QuanLySinhVien3._0
         {
             if ( LoginDAO.Instance.CheckAccount(txt_Username.Text, txt_Password.Text) == false )
             {
-                MessageBox.Show("mời bạn nhập lại");
+                MessageBox.Show("Tên đăng nhập hoặc mật khẩu không chính xác, vui lòng thử lại", "Thông báo");
             }
             else
             {

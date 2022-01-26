@@ -61,11 +61,11 @@ namespace Winform_QuanLySinhVien3._0
                 // truyền parameter
                 if (parameter != null)
                 {
+                    string[] listPara = query.Split(' ');
                     int i = 0;
-                    string[] temp = query.Split(' ');
-                    foreach (string item in temp)
+                    foreach (string item in listPara)
                     {
-                        if (item[0] == '@' && item != string.Empty)
+                        if (item.Contains('@'))
                         {
                             string value = parameter[i].ToString();
                             command.Parameters.AddWithValue(item, value);

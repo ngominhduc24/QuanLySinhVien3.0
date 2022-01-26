@@ -46,5 +46,16 @@ namespace Winform_QuanLySinhVien3._0.DAO_data_access_object_
             User user = new User(Data.Rows[0]);
             return user;
         }
+
+        public bool UpdateInfo(int oldIdAccount, User user)
+        {
+            object[] parameter = new object[] { user.Name , user.Specialized , user.Sex ,user.Dateofbirth.ToString() , oldIdAccount.ToString() };
+            string query = "UPDATE Teacher SET name = @name , specialized = @specialized , sex = @sex , dateofbirth = @dateofbirth where idaccount = @oldidaccouunt ";
+            if ( DataProvider.Instance.ExecuteNonQuery(query, parameter) > 0 )
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }
