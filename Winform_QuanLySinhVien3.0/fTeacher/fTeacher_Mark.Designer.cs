@@ -34,11 +34,11 @@
             this.txt_FindName = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.cbb_FindClass = new System.Windows.Forms.ComboBox();
+            this.cbb_FindSubject = new System.Windows.Forms.ComboBox();
             this.btn_Exit = new System.Windows.Forms.Button();
+            this.btn_Find = new System.Windows.Forms.Button();
             this.btn_ReplaceMark = new System.Windows.Forms.Button();
             this.datagrid_Mark = new System.Windows.Forms.DataGridView();
-            this.btn_Find = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datagrid_Mark)).BeginInit();
             this.SuspendLayout();
@@ -50,7 +50,7 @@
             this.panel1.Controls.Add(this.txt_FindName);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.cbb_FindClass);
+            this.panel1.Controls.Add(this.cbb_FindSubject);
             this.panel1.Controls.Add(this.btn_Exit);
             this.panel1.Controls.Add(this.btn_Find);
             this.panel1.Controls.Add(this.btn_ReplaceMark);
@@ -100,17 +100,17 @@
             this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(286, 75);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(166, 22);
+            this.label5.Size = new System.Drawing.Size(172, 22);
             this.label5.TabIndex = 49;
-            this.label5.Text = "Tìm kiếm theo lớp :";
+            this.label5.Text = "Tìm kiếm theo môn :";
             // 
-            // cbb_FindClass
+            // cbb_FindSubject
             // 
-            this.cbb_FindClass.FormattingEnabled = true;
-            this.cbb_FindClass.Location = new System.Drawing.Point(474, 76);
-            this.cbb_FindClass.Name = "cbb_FindClass";
-            this.cbb_FindClass.Size = new System.Drawing.Size(101, 24);
-            this.cbb_FindClass.TabIndex = 48;
+            this.cbb_FindSubject.FormattingEnabled = true;
+            this.cbb_FindSubject.Location = new System.Drawing.Point(474, 76);
+            this.cbb_FindSubject.Name = "cbb_FindSubject";
+            this.cbb_FindSubject.Size = new System.Drawing.Size(101, 24);
+            this.cbb_FindSubject.TabIndex = 48;
             // 
             // btn_Exit
             // 
@@ -121,6 +121,16 @@
             this.btn_Exit.Text = "Thoát";
             this.btn_Exit.UseVisualStyleBackColor = true;
             this.btn_Exit.Click += new System.EventHandler(this.btn_Exit_Click);
+            // 
+            // btn_Find
+            // 
+            this.btn_Find.Location = new System.Drawing.Point(444, 456);
+            this.btn_Find.Name = "btn_Find";
+            this.btn_Find.Size = new System.Drawing.Size(131, 64);
+            this.btn_Find.TabIndex = 39;
+            this.btn_Find.Text = "Tìm kiếm";
+            this.btn_Find.UseVisualStyleBackColor = true;
+            this.btn_Find.Click += new System.EventHandler(this.btn_Find_Click);
             // 
             // btn_ReplaceMark
             // 
@@ -140,16 +150,6 @@
             this.datagrid_Mark.RowTemplate.Height = 24;
             this.datagrid_Mark.Size = new System.Drawing.Size(911, 326);
             this.datagrid_Mark.TabIndex = 38;
-            // 
-            // btn_Find
-            // 
-            this.btn_Find.Location = new System.Drawing.Point(444, 456);
-            this.btn_Find.Name = "btn_Find";
-            this.btn_Find.Size = new System.Drawing.Size(131, 64);
-            this.btn_Find.TabIndex = 39;
-            this.btn_Find.Text = "Tìm kiếm";
-            this.btn_Find.UseVisualStyleBackColor = true;
-            this.btn_Find.Click += new System.EventHandler(this.btn_Find_Click);
             // 
             // fTeacher_Mark
             // 
@@ -180,7 +180,7 @@
         private System.Windows.Forms.TextBox txt_FindName;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox cbb_FindClass;
+        private System.Windows.Forms.ComboBox cbb_FindSubject;
         private System.Windows.Forms.Button btn_Find;
     }
 }

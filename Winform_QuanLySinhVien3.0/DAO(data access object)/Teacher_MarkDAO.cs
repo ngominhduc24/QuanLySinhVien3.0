@@ -27,16 +27,27 @@ namespace Winform_QuanLySinhVien3._0.DAO_data_access_object_
             return DataProvider.Instance.ExecuteQuery("SELECT  student.name, student.specialized ,student.dateofbirth  ,mark.* FROM Mark , Student  WHERE Mark.idstudent = student.id");
         }
 
+        public List<string> LoadDataCombobox(int idAccount)
+        {
+            List<string> list = new List<string>();
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT subject FROM Mark GROUP BY subject ");
+            foreach (DataRow row in data.Rows)
+            {
+                list.Add(row["subject"].ToString());
+            }
+            return list;
+        }
+
         public DataTable FindData(string idFind  , string nameFind , string subjectFind )
         {
             DataTable data = new DataTable();
-            if ( idFind != "" ) { idFind = "idstudent LIKE N'%" + idFind +"%' "; } else  idFind = " "; 
+            if ( idFind != "" ) { idFind = "AND idstudent LIKE N'%" + idFind +"%' "; } else  idFind = " "; 
             if (nameFind != "") { nameFind = "AND name LIKE N'%" + nameFind + "%' "; } else nameFind = " ";
             if (subjectFind != "" ) { subjectFind = "AND subject LIKE N%" + subjectFind + "%'"; } else subjectFind = " ";
             object[] parameter = new object[] { idFind, nameFind, subjectFind };
             try
             {
-                 data = DataProvider.Instance.ExecuteQuery(" SELECT  student.name, student.specialized ,student.dateofbirth  ,mark.* FROM Mark , Student  WHERE Mark.idstudent = student.id AND	"+idFind+ " " + nameFind + " " + subjectFind + " ");
+                 data = DataProvider.Instance.ExecuteQuery(" SELECT  student.name, student.specialized ,student.dateofbirth  ,mark.* FROM Mark , Student  WHERE Mark.idstudent = student.id "+idFind+ " " + nameFind + " " + subjectFind + " ");
             } 
             catch (Exception)
             {

@@ -27,5 +27,17 @@ namespace Winform_QuanLySinhVien3._0.DAO_data_access_object_
             object[] parameter = new object[] { idAccount };
             return DataProvider.Instance.ExecuteQuery("SELECT * FROM Mark WHERE idStudent = ( SELECT id FROM Student WHERE idAccount = @idAccount )",parameter);
         }
+
+        public List<string> LoadDataCombobox(int idAccount)
+        {
+            List<string> list = new List<string>();
+            object[] parameter = new object[] { idAccount };
+            DataTable data = DataProvider.Instance.ExecuteQuery("EXEC GroupSubject @id ",parameter);
+            foreach (DataRow row in data.Rows)
+            {
+                list.Add(row["subject"].ToString());
+            }
+            return list;
+        }
     }
 }

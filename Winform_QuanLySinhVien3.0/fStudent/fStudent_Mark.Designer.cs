@@ -32,7 +32,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
-            this.cbb_FindClass = new System.Windows.Forms.ComboBox();
+            this.cbb_FindSubject = new System.Windows.Forms.ComboBox();
             this.btn_Exit = new System.Windows.Forms.Button();
             this.btn_ReportMark = new System.Windows.Forms.Button();
             this.datagrid_Mark = new System.Windows.Forms.DataGridView();
@@ -65,7 +65,7 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.cbb_FindClass);
+            this.panel1.Controls.Add(this.cbb_FindSubject);
             this.panel1.Controls.Add(this.btn_Exit);
             this.panel1.Controls.Add(this.btn_ReportMark);
             this.panel1.Controls.Add(this.datagrid_Mark);
@@ -80,17 +80,18 @@
             this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(103, 15);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(166, 22);
+            this.label3.Size = new System.Drawing.Size(172, 22);
             this.label3.TabIndex = 42;
-            this.label3.Text = "Tìm kiếm theo lớp :";
+            this.label3.Text = "Tìm kiếm theo môn :";
             // 
-            // cbb_FindClass
+            // cbb_FindSubject
             // 
-            this.cbb_FindClass.FormattingEnabled = true;
-            this.cbb_FindClass.Location = new System.Drawing.Point(291, 16);
-            this.cbb_FindClass.Name = "cbb_FindClass";
-            this.cbb_FindClass.Size = new System.Drawing.Size(177, 24);
-            this.cbb_FindClass.TabIndex = 41;
+            this.cbb_FindSubject.FormattingEnabled = true;
+            this.cbb_FindSubject.Location = new System.Drawing.Point(291, 16);
+            this.cbb_FindSubject.Name = "cbb_FindSubject";
+            this.cbb_FindSubject.Size = new System.Drawing.Size(177, 24);
+            this.cbb_FindSubject.TabIndex = 41;
+            this.cbb_FindSubject.SelectedIndexChanged += new System.EventHandler(this.cbb_FindSubject_SelectedIndexChanged);
             // 
             // btn_Exit
             // 
@@ -169,7 +170,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox cbb_FindClass;
+        private System.Windows.Forms.ComboBox cbb_FindSubject;
         private System.Windows.Forms.Button btn_Exit;
         private System.Windows.Forms.Button btn_ReportMark;
         private System.Windows.Forms.DataGridView datagrid_Mark;

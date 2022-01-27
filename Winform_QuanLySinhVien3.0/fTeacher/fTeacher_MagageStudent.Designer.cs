@@ -34,13 +34,13 @@
             this.txt_FindName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.cbb_FindClass = new System.Windows.Forms.ComboBox();
+            this.cbb_FindSubject = new System.Windows.Forms.ComboBox();
             this.btn_Exit = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btn_ReplaceInfo = new System.Windows.Forms.Button();
-            this.datagrid_Mark = new System.Windows.Forms.DataGridView();
+            this.btn_Find = new System.Windows.Forms.Button();
+            this.btn_UpdateInfo = new System.Windows.Forms.Button();
+            this.datagrid_StudentInfo = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.datagrid_Mark)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datagrid_StudentInfo)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -50,11 +50,11 @@
             this.panel1.Controls.Add(this.txt_FindName);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.cbb_FindClass);
+            this.panel1.Controls.Add(this.cbb_FindSubject);
             this.panel1.Controls.Add(this.btn_Exit);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.btn_ReplaceInfo);
-            this.panel1.Controls.Add(this.datagrid_Mark);
+            this.panel1.Controls.Add(this.btn_Find);
+            this.panel1.Controls.Add(this.btn_UpdateInfo);
+            this.panel1.Controls.Add(this.datagrid_StudentInfo);
             this.panel1.Location = new System.Drawing.Point(12, 15);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(973, 539);
@@ -62,10 +62,10 @@
             // 
             // txt_FindID
             // 
-            this.txt_FindID.Location = new System.Drawing.Point(276, 18);
+            this.txt_FindID.Location = new System.Drawing.Point(273, 19);
             this.txt_FindID.Name = "txt_FindID";
             this.txt_FindID.Size = new System.Drawing.Size(177, 22);
-            this.txt_FindID.TabIndex = 47;
+            this.txt_FindID.TabIndex = 0;
             // 
             // label2
             // 
@@ -82,7 +82,7 @@
             this.txt_FindName.Location = new System.Drawing.Point(712, 17);
             this.txt_FindName.Name = "txt_FindName";
             this.txt_FindName.Size = new System.Drawing.Size(177, 22);
-            this.txt_FindName.TabIndex = 45;
+            this.txt_FindName.TabIndex = 1;
             // 
             // label1
             // 
@@ -98,19 +98,19 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(287, 73);
+            this.label3.Location = new System.Drawing.Point(255, 76);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(172, 22);
+            this.label3.Size = new System.Drawing.Size(238, 22);
             this.label3.TabIndex = 42;
-            this.label3.Text = "Tìm kiếm theo môn :";
+            this.label3.Text = "Tìm kiếm theo chuyên ngành:";
             // 
-            // cbb_FindClass
+            // cbb_FindSubject
             // 
-            this.cbb_FindClass.FormattingEnabled = true;
-            this.cbb_FindClass.Location = new System.Drawing.Point(475, 74);
-            this.cbb_FindClass.Name = "cbb_FindClass";
-            this.cbb_FindClass.Size = new System.Drawing.Size(101, 24);
-            this.cbb_FindClass.TabIndex = 41;
+            this.cbb_FindSubject.FormattingEnabled = true;
+            this.cbb_FindSubject.Location = new System.Drawing.Point(499, 74);
+            this.cbb_FindSubject.Name = "cbb_FindSubject";
+            this.cbb_FindSubject.Size = new System.Drawing.Size(101, 24);
+            this.cbb_FindSubject.TabIndex = 2;
             // 
             // btn_Exit
             // 
@@ -122,33 +122,34 @@
             this.btn_Exit.UseVisualStyleBackColor = true;
             this.btn_Exit.Click += new System.EventHandler(this.btn_Exit_Click);
             // 
-            // button1
+            // btn_Find
             // 
-            this.button1.Location = new System.Drawing.Point(445, 456);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(131, 64);
-            this.button1.TabIndex = 39;
-            this.button1.Text = "Tìm kiếm";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_Find.Location = new System.Drawing.Point(445, 456);
+            this.btn_Find.Name = "btn_Find";
+            this.btn_Find.Size = new System.Drawing.Size(131, 64);
+            this.btn_Find.TabIndex = 3;
+            this.btn_Find.Text = "Tìm kiếm";
+            this.btn_Find.UseVisualStyleBackColor = true;
+            this.btn_Find.Click += new System.EventHandler(this.btn_Find_Click);
             // 
-            // btn_ReplaceInfo
+            // btn_UpdateInfo
             // 
-            this.btn_ReplaceInfo.Location = new System.Drawing.Point(609, 456);
-            this.btn_ReplaceInfo.Name = "btn_ReplaceInfo";
-            this.btn_ReplaceInfo.Size = new System.Drawing.Size(131, 64);
-            this.btn_ReplaceInfo.TabIndex = 39;
-            this.btn_ReplaceInfo.Text = "Lưu thông tin";
-            this.btn_ReplaceInfo.UseVisualStyleBackColor = true;
+            this.btn_UpdateInfo.Location = new System.Drawing.Point(609, 456);
+            this.btn_UpdateInfo.Name = "btn_UpdateInfo";
+            this.btn_UpdateInfo.Size = new System.Drawing.Size(131, 64);
+            this.btn_UpdateInfo.TabIndex = 39;
+            this.btn_UpdateInfo.Text = "Lưu thông tin";
+            this.btn_UpdateInfo.UseVisualStyleBackColor = true;
             // 
-            // datagrid_Mark
+            // datagrid_StudentInfo
             // 
-            this.datagrid_Mark.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.datagrid_Mark.Location = new System.Drawing.Point(57, 114);
-            this.datagrid_Mark.Name = "datagrid_Mark";
-            this.datagrid_Mark.RowHeadersWidth = 51;
-            this.datagrid_Mark.RowTemplate.Height = 24;
-            this.datagrid_Mark.Size = new System.Drawing.Size(872, 326);
-            this.datagrid_Mark.TabIndex = 38;
+            this.datagrid_StudentInfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.datagrid_StudentInfo.Location = new System.Drawing.Point(57, 114);
+            this.datagrid_StudentInfo.Name = "datagrid_StudentInfo";
+            this.datagrid_StudentInfo.RowHeadersWidth = 51;
+            this.datagrid_StudentInfo.RowTemplate.Height = 24;
+            this.datagrid_StudentInfo.Size = new System.Drawing.Size(872, 326);
+            this.datagrid_StudentInfo.TabIndex = 38;
             // 
             // fTeacher_MagageStudent
             // 
@@ -163,7 +164,7 @@
             this.Load += new System.EventHandler(this.fTeacher_MagageStudent_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.datagrid_Mark)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datagrid_StudentInfo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -176,10 +177,10 @@
         private System.Windows.Forms.TextBox txt_FindName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox cbb_FindClass;
+        private System.Windows.Forms.ComboBox cbb_FindSubject;
         private System.Windows.Forms.Button btn_Exit;
-        private System.Windows.Forms.Button btn_ReplaceInfo;
-        private System.Windows.Forms.DataGridView datagrid_Mark;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_UpdateInfo;
+        private System.Windows.Forms.DataGridView datagrid_StudentInfo;
+        private System.Windows.Forms.Button btn_Find;
     }
 }

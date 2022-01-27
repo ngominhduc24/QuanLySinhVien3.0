@@ -14,6 +14,22 @@ namespace Winform_QuanLySinhVien3._0
     public partial class fStudent_Mark : Form
     {
         private int idAccount;
+
+        #region method
+        private void LoadDataToDatagrid()
+        {
+            datagrid_Mark.DataSource = Student_MarkDAO.Instance.LoadDataMark(idAccount);
+        }
+
+        private void LoadDataToCombobox()
+        {
+            List<string> list = Student_MarkDAO.Instance.LoadDataCombobox(idAccount);
+            foreach (string item in list)
+            {
+                cbb_FindSubject.Items.Add(item);
+            }
+        }
+        #endregion
         public fStudent_Mark(int idAccount)
         {
             InitializeComponent();
@@ -27,7 +43,13 @@ namespace Winform_QuanLySinhVien3._0
 
         private void fStudent_Mark_Load(object sender, EventArgs e)
         {
-            datagrid_Mark.DataSource = Student_MarkDAO.Instance.LoadDataMark(idAccount);
+            LoadDataToDatagrid();
+            LoadDataToCombobox();
+        }
+
+        private void cbb_FindSubject_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

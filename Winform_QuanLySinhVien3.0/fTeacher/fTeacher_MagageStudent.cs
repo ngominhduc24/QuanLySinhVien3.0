@@ -14,11 +14,27 @@ namespace Winform_QuanLySinhVien3._0
     public partial class fTeacher_MagageStudent : Form
     {
 
-        private int IdAccount;
-        public fTeacher_MagageStudent(int IdAccount)
+        private int idAccount;
+
+        #region method
+        private void LoadDataToDatagrid()
+        {
+            datagrid_StudentInfo.DataSource = Teacher_ManageDAO.Instance.LoadDataStudent(idAccount);
+        }
+
+        private void LoadDataToCombobox()
+        {
+            List<string> list = Teacher_ManageDAO.Instance.LoadDataCombobox(idAccount);
+            foreach (string item in list)
+            {
+                cbb_FindSubject.Items.Add(item);
+            }
+        }
+        #endregion
+        public fTeacher_MagageStudent(int idAccount)
         {
             InitializeComponent();
-            this.IdAccount = IdAccount;
+            this.idAccount = idAccount;
         }
 
         private void btn_Exit_Click(object sender, EventArgs e)
@@ -28,7 +44,14 @@ namespace Winform_QuanLySinhVien3._0
 
         private void fTeacher_MagageStudent_Load(object sender, EventArgs e)
         {
-            datagrid_Mark.DataSource = Teacher_ManageDAO.Instance.LoadDataStudent(IdAccount);
+            LoadDataToDatagrid();
+            LoadDataToCombobox();
+        }
+
+        private void btn_Find_Click(object sender, EventArgs e)
+        {
+            datagrid_StudentInfo.DataSource = Teacher_ManageDAO.Instance.FindData(txt_FindID.Text.Trim(), txt_FindName.Text.Trim(), cbb_FindSubject.Text.Trim());
+            // bug not fixed
         }
     }
 }
