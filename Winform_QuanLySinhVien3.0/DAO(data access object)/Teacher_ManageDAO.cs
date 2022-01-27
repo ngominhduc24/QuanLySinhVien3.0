@@ -30,7 +30,7 @@ namespace Winform_QuanLySinhVien3._0.DAL_data_access_layer_
             DataTable data = DataProvider.Instance.ExecuteQuery("SELECT specialized FROM student GROUP BY specialized ");
             foreach (DataRow row in data.Rows)
             {
-                list.Add(row["specializeda"].ToString());
+                list.Add(row["specialized"].ToString());
             }
             return list;
         }
