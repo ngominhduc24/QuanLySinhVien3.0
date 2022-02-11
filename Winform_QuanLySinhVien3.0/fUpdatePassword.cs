@@ -28,10 +28,10 @@ namespace Winform_QuanLySinhVien3._0
             return true;
         }
 
-        private bool CheckUpdateChangePassword(int idaccount,string newPassword)
+        private bool CheckUpdateChangePassword(string newPassword, int idaccount, string oldPassword)
         {
-            string query = "UPDATE Account SET password = @password WHERE id = @id ";
-            object[] parameter = new object[] { newPassword, idaccount };
+            string query = "UPDATE Account SET password = @password WHERE id = @id AND password = @oldPassword ";
+            object[] parameter = new object[] { newPassword, idaccount, oldPassword };
             if ( DataProvider.Instance.ExecuteNonQuery(query,parameter) > 0)
             {
                 return true;
@@ -48,7 +48,7 @@ namespace Winform_QuanLySinhVien3._0
         {
             if ( comparePasswordAndConfirmPassword() == true )
             {
-                if (CheckUpdateChangePassword(idAccount, txt_NewPassword.Text) == true)
+                if (CheckUpdateChangePassword( txt_NewPassword.Text, idAccount, txt_OldPassword.Text) == true)
                 {
                     MessageBox.Show("Đổi mật khẩu thành công", "Thông báo");
                 }

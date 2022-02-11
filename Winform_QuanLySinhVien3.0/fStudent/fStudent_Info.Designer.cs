@@ -236,9 +236,9 @@
             // 
             // btn_Exit2
             // 
-            this.btn_Exit2.Location = new System.Drawing.Point(304, 325);
+            this.btn_Exit2.Location = new System.Drawing.Point(311, 325);
             this.btn_Exit2.Name = "btn_Exit2";
-            this.btn_Exit2.Size = new System.Drawing.Size(117, 55);
+            this.btn_Exit2.Size = new System.Drawing.Size(128, 64);
             this.btn_Exit2.TabIndex = 37;
             this.btn_Exit2.Text = "thoát";
             this.btn_Exit2.UseVisualStyleBackColor = true;
@@ -248,7 +248,7 @@
             // 
             this.btn_UpdatePassword.Location = new System.Drawing.Point(90, 325);
             this.btn_UpdatePassword.Name = "btn_UpdatePassword";
-            this.btn_UpdatePassword.Size = new System.Drawing.Size(117, 55);
+            this.btn_UpdatePassword.Size = new System.Drawing.Size(128, 64);
             this.btn_UpdatePassword.TabIndex = 36;
             this.btn_UpdatePassword.Text = "Đổi mật khẩu";
             this.btn_UpdatePassword.UseVisualStyleBackColor = true;

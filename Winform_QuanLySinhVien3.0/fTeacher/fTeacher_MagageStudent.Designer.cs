@@ -34,7 +34,7 @@
             this.txt_FindName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.cbb_FindSubject = new System.Windows.Forms.ComboBox();
+            this.cbb_FindSpecialized = new System.Windows.Forms.ComboBox();
             this.btn_Exit = new System.Windows.Forms.Button();
             this.btn_Find = new System.Windows.Forms.Button();
             this.btn_UpdateInfo = new System.Windows.Forms.Button();
@@ -50,7 +50,7 @@
             this.panel1.Controls.Add(this.txt_FindName);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.cbb_FindSubject);
+            this.panel1.Controls.Add(this.cbb_FindSpecialized);
             this.panel1.Controls.Add(this.btn_Exit);
             this.panel1.Controls.Add(this.btn_Find);
             this.panel1.Controls.Add(this.btn_UpdateInfo);
@@ -104,13 +104,13 @@
             this.label3.TabIndex = 42;
             this.label3.Text = "Tìm kiếm theo chuyên ngành:";
             // 
-            // cbb_FindSubject
+            // cbb_FindSpecialized
             // 
-            this.cbb_FindSubject.FormattingEnabled = true;
-            this.cbb_FindSubject.Location = new System.Drawing.Point(499, 74);
-            this.cbb_FindSubject.Name = "cbb_FindSubject";
-            this.cbb_FindSubject.Size = new System.Drawing.Size(101, 24);
-            this.cbb_FindSubject.TabIndex = 2;
+            this.cbb_FindSpecialized.FormattingEnabled = true;
+            this.cbb_FindSpecialized.Location = new System.Drawing.Point(499, 74);
+            this.cbb_FindSpecialized.Name = "cbb_FindSpecialized";
+            this.cbb_FindSpecialized.Size = new System.Drawing.Size(101, 24);
+            this.cbb_FindSpecialized.TabIndex = 2;
             // 
             // btn_Exit
             // 
@@ -140,6 +140,7 @@
             this.btn_UpdateInfo.TabIndex = 39;
             this.btn_UpdateInfo.Text = "Lưu thông tin";
             this.btn_UpdateInfo.UseVisualStyleBackColor = true;
+            this.btn_UpdateInfo.Click += new System.EventHandler(this.btn_UpdateInfo_Click);
             // 
             // datagrid_StudentInfo
             // 
@@ -150,6 +151,7 @@
             this.datagrid_StudentInfo.RowTemplate.Height = 24;
             this.datagrid_StudentInfo.Size = new System.Drawing.Size(872, 326);
             this.datagrid_StudentInfo.TabIndex = 38;
+            this.datagrid_StudentInfo.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datagrid_StudentInfo_CellClick);
             // 
             // fTeacher_MagageStudent
             // 
@@ -160,7 +162,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "fTeacher_MagageStudent";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "fTeacher_MagageStudent";
+            this.Text = "Quản lý học sinh";
             this.Load += new System.EventHandler(this.fTeacher_MagageStudent_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -177,7 +179,7 @@
         private System.Windows.Forms.TextBox txt_FindName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox cbb_FindSubject;
+        private System.Windows.Forms.ComboBox cbb_FindSpecialized;
         private System.Windows.Forms.Button btn_Exit;
         private System.Windows.Forms.Button btn_UpdateInfo;
         private System.Windows.Forms.DataGridView datagrid_StudentInfo;

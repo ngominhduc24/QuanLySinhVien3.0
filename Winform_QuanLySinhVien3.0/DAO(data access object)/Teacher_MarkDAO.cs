@@ -22,9 +22,9 @@ namespace Winform_QuanLySinhVien3._0.DAO_data_access_object_
             }
         }
 
-        public DataTable LoadDataMark(int idAccount)
+        public DataTable LoadDataMark()
         {
-            return DataProvider.Instance.ExecuteQuery("SELECT  student.name, student.specialized ,student.dateofbirth  ,mark.* FROM Mark , Student  WHERE Mark.idstudent = student.id");
+            return DataProvider.Instance.ExecuteQuery("EXECUTE DataMark");
         }
 
         public List<string> LoadDataCombobox(int idAccount)
@@ -38,24 +38,29 @@ namespace Winform_QuanLySinhVien3._0.DAO_data_access_object_
             return list;
         }
 
-        public DataTable FindData(string idFind  , string nameFind , string subjectFind )
+        public DataTable FindData(string idFind, string nameFind, string subjectFind)
         {
             DataTable data = new DataTable();
-            if ( idFind != "" ) { idFind = "AND idstudent LIKE N'%" + idFind +"%' "; } else  idFind = " "; 
-            if (nameFind != "") { nameFind = "AND name LIKE N'%" + nameFind + "%' "; } else nameFind = " ";
-            if (subjectFind != "" ) { subjectFind = "AND subject LIKE N%" + subjectFind + "%'"; } else subjectFind = " ";
+            if (idFind != "") { idFind = "AND id LIKE N'%" + idFind + "%' "; } else idFind = " ";
+            if (nameFind != "") { nameFind = "AND name LIKE N'%" + nameFind + "%' "; }
+            if (subjectFind != "") { subjectFind = "AND subject LIKE N'%" + subjectFind + "%'"; } else subjectFind = " ";
             object[] parameter = new object[] { idFind, nameFind, subjectFind };
             try
             {
-                 data = DataProvider.Instance.ExecuteQuery(" SELECT  student.name, student.specialized ,student.dateofbirth  ,mark.* FROM Mark , Student  WHERE Mark.idstudent = student.id "+idFind+ " " + nameFind + " " + subjectFind + " ");
-            } 
-            catch (Exception)
-            {
-
-               
+                data = DataProvider.Instance.ExecuteQuery("SELECT  M.idStudent, S.name,S.specialized , M.subject, M.test1, M.test2, M.final_exam FROM Mark AS M , Student  AS S   WHERE   M.idstudent =  S.id " + idFind + " " + nameFind + " " + subjectFind + " ");
             }
-            
+            catch (Exception) { }
             return data;
-        } // chưa sửa xong , không truyền được parameter(tạo procedure trong sql)
+        } 
+
+        public bool UpdateMark(object[] parameter)
+        {
+            string query = "UPDATE Mark  SET test1 = @test1 , test2 = @test2 , final_exam = @final_exam WHERE ID = @ID ; ";
+            if (DataProvider.Instance.ExecuteNonQuery(query, parameter) > 0)
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }

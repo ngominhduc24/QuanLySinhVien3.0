@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Winform_QuanLySinhVien3._0.DAO_data_access_object_;
+using Winform_QuanLySinhVien3._0.DTO_data_transfer_object_;
 
 namespace Winform_QuanLySinhVien3._0
 {
@@ -29,6 +30,17 @@ namespace Winform_QuanLySinhVien3._0
                 cbb_FindSubject.Items.Add(item);
             }
         }
+
+        private void LoadNameAndID()
+        {
+            User user = Student_MarkDAO.Instance.LoadDataUser(idAccount);
+            textName.Text = user.Name;
+            textID.Text = user.idStudent;
+        }
+        private void LoadDataAfterFind()
+        {
+            datagrid_Mark.DataSource = Student_MarkDAO.Instance.FindBySubject(idAccount,cbb_FindSubject.Text);
+        }
         #endregion
         public fStudent_Mark(int idAccount)
         {
@@ -45,11 +57,12 @@ namespace Winform_QuanLySinhVien3._0
         {
             LoadDataToDatagrid();
             LoadDataToCombobox();
+            LoadNameAndID();
         }
 
-        private void cbb_FindSubject_SelectedIndexChanged(object sender, EventArgs e)
+        private void btn_Find_Click(object sender, EventArgs e)
         {
-
+            LoadDataAfterFind();
         }
     }
 }

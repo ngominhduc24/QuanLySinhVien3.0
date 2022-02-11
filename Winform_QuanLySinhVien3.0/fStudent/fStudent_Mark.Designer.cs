@@ -38,6 +38,7 @@
             this.datagrid_Mark = new System.Windows.Forms.DataGridView();
             this.textID = new System.Windows.Forms.Label();
             this.textName = new System.Windows.Forms.Label();
+            this.btn_Find = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datagrid_Mark)).BeginInit();
             this.SuspendLayout();
@@ -56,7 +57,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(59, 20);
+            this.label1.Location = new System.Drawing.Point(66, 21);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(97, 22);
             this.label1.TabIndex = 32;
@@ -67,6 +68,7 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.cbb_FindSubject);
             this.panel1.Controls.Add(this.btn_Exit);
+            this.panel1.Controls.Add(this.btn_Find);
             this.panel1.Controls.Add(this.btn_ReportMark);
             this.panel1.Controls.Add(this.datagrid_Mark);
             this.panel1.Location = new System.Drawing.Point(12, 78);
@@ -90,8 +92,7 @@
             this.cbb_FindSubject.Location = new System.Drawing.Point(291, 16);
             this.cbb_FindSubject.Name = "cbb_FindSubject";
             this.cbb_FindSubject.Size = new System.Drawing.Size(177, 24);
-            this.cbb_FindSubject.TabIndex = 41;
-            this.cbb_FindSubject.SelectedIndexChanged += new System.EventHandler(this.cbb_FindSubject_SelectedIndexChanged);
+            this.cbb_FindSubject.TabIndex = 43;
             // 
             // btn_Exit
             // 
@@ -126,7 +127,7 @@
             // 
             this.textID.AutoSize = true;
             this.textID.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textID.Location = new System.Drawing.Point(616, 21);
+            this.textID.Location = new System.Drawing.Point(601, 21);
             this.textID.Name = "textID";
             this.textID.Size = new System.Drawing.Size(30, 22);
             this.textID.TabIndex = 37;
@@ -136,11 +137,21 @@
             // 
             this.textName.AutoSize = true;
             this.textName.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textName.Location = new System.Drawing.Point(178, 21);
+            this.textName.Location = new System.Drawing.Point(169, 21);
             this.textName.Name = "textName";
             this.textName.Size = new System.Drawing.Size(56, 22);
             this.textName.TabIndex = 38;
             this.textName.Text = "Name";
+            // 
+            // btn_Find
+            // 
+            this.btn_Find.Location = new System.Drawing.Point(441, 401);
+            this.btn_Find.Name = "btn_Find";
+            this.btn_Find.Size = new System.Drawing.Size(131, 64);
+            this.btn_Find.TabIndex = 39;
+            this.btn_Find.Text = "Tìm kiếm";
+            this.btn_Find.UseVisualStyleBackColor = true;
+            this.btn_Find.Click += new System.EventHandler(this.btn_Find_Click);
             // 
             // fStudent_Mark
             // 
@@ -176,5 +187,6 @@
         private System.Windows.Forms.DataGridView datagrid_Mark;
         private System.Windows.Forms.Label textID;
         private System.Windows.Forms.Label textName;
+        private System.Windows.Forms.Button btn_Find;
     }
 }

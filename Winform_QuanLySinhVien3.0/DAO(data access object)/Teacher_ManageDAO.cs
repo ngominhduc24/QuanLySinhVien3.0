@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data;
+using System.Windows.Forms;
+using Winform_QuanLySinhVien3._0.DTO_data_transfer_object_;
 
 namespace Winform_QuanLySinhVien3._0.DAL_data_access_layer_
 {
@@ -22,7 +24,7 @@ namespace Winform_QuanLySinhVien3._0.DAL_data_access_layer_
         }
         public DataTable LoadDataStudent(int IdAccount)
         {
-            return DataProvider.Instance.ExecuteQuery("SELECT * FROM Student ");
+            return DataProvider.Instance.ExecuteQuery(" EXECUTE DataStudent ");
         }
         public List<string> LoadDataCombobox(int idAccount)
         {
@@ -30,28 +32,32 @@ namespace Winform_QuanLySinhVien3._0.DAL_data_access_layer_
             DataTable data = DataProvider.Instance.ExecuteQuery("SELECT specialized FROM student GROUP BY specialized ");
             foreach (DataRow row in data.Rows)
             {
-                list.Add(row["specializeda"].ToString());
+                list.Add(row["specialized"].ToString());
             }
             return list;
         }
-        public DataTable FindData(string idFind, string nameFind, string subjectFind)
+        public DataTable FindData(string idFind, string nameFind, string specializedFind)
         {
             DataTable data = new DataTable();
             if (idFind != "") { idFind = "WHERE id LIKE N'%" + idFind + "%' "; } else idFind = " WHERE 1 = 1 ";
-            if (nameFind != "") { nameFind = "AND name LIKE N'%" + nameFind + "%' "; } else nameFind = " ";
-            if (subjectFind != "") { subjectFind = "AND subject LIKE N%" + subjectFind + "%'"; } else subjectFind = " ";
-            object[] parameter = new object[] { idFind, nameFind, subjectFind };
+            if (nameFind != "") { nameFind = "AND name LIKE N'%" + nameFind + "%' "; }
+            if (specializedFind != "") { specializedFind = "AND specialized LIKE N'%" + specializedFind + "%'"; } else specializedFind = " ";
             try
             {
-                data = DataProvider.Instance.ExecuteQuery("SELECT * FROM Student " + idFind + " " + nameFind + " " + subjectFind + " ");
+                data = DataProvider.Instance.ExecuteQuery("SELECT * FROM Student " + idFind + " " + nameFind + " " + specializedFind + " ");
             }
-            catch (Exception)
-            {
-
-
-            }
-
+            catch (Exception) { }
             return data;
         } // chưa sửa xong , không truyền được parameter(tạo procedure trong sql)
+        public bool UpdateData(User user)
+        {
+            object[] parameter = new object[] { user.Name, user.Specialized, user.Sex, user.Dateofbirth, user.idStudent };
+            string query = "UPDATE Student  SET Name = @Name , specialized = @specialized  ,Sex = @sex , Dateofbirth = @Dateofbirth WHERE ID = @IdStudent ; ";
+            if (DataProvider.Instance.ExecuteNonQuery(query, parameter) > 0)
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }

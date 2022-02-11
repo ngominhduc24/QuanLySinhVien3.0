@@ -9,8 +9,15 @@ namespace Winform_QuanLySinhVien3._0.DTO_data_transfer_object_
 {
     internal class User
     {
-        
-        public User(string name, string specialized ,string sex, DateTime dateofbirth) // chỉ dùng với teacher , chưa có idstudent
+        public User(string idStudent,string name, string specialized, string sex, DateTime dateofbirth) // dùng với student
+        {
+            this.idStudent = idStudent; 
+            this.name = name;
+            this.sex = sex;
+            this.specialized = specialized;
+            this.dateofbirth = dateofbirth;
+        }
+        public User(string name, string specialized ,string sex, DateTime dateofbirth) //  dùng với teacher 
         {
             this.name = name;
             this.sex = sex;

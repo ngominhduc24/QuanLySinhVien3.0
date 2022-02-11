@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data;
+using Winform_QuanLySinhVien3._0.DTO_data_transfer_object_;
 
 namespace Winform_QuanLySinhVien3._0.DAO_data_access_object_
 {
@@ -22,22 +23,35 @@ namespace Winform_QuanLySinhVien3._0.DAO_data_access_object_
             }
         }
 
+        public User LoadDataUser(int idAccount)
+        {
+            object[] parameter = new object[] { idAccount };
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT * FROM Student WHERE idAccount = @idAccount ", parameter);
+            User user = new User(data.Rows[0]);
+            return user;
+        }
+
         public DataTable LoadDataMark(int idAccount)
         {
             object[] parameter = new object[] { idAccount };
-            return DataProvider.Instance.ExecuteQuery("SELECT * FROM Mark WHERE idStudent = ( SELECT id FROM Student WHERE idAccount = @idAccount )",parameter);
+            return DataProvider.Instance.ExecuteQuery("EXEC DaTaMarkStudent @idAccount ", parameter);
         }
 
         public List<string> LoadDataCombobox(int idAccount)
         {
             List<string> list = new List<string>();
             object[] parameter = new object[] { idAccount };
-            DataTable data = DataProvider.Instance.ExecuteQuery("EXEC GroupSubject @id ",parameter);
+            DataTable data = DataProvider.Instance.ExecuteQuery("EXEC GroupSubject @id ", parameter);
             foreach (DataRow row in data.Rows)
             {
                 list.Add(row["subject"].ToString());
             }
             return list;
+        }
+        public DataTable FindBySubject(int idAccount, string subject)
+        {
+            object[] parameter = new object[] { idAccount, subject };
+            return DataProvider.Instance.ExecuteQuery("EXEC StudentFindMark @idAccount , @subject ", parameter);
         }
     }
 }

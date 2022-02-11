@@ -37,7 +37,7 @@
             this.cbb_FindSubject = new System.Windows.Forms.ComboBox();
             this.btn_Exit = new System.Windows.Forms.Button();
             this.btn_Find = new System.Windows.Forms.Button();
-            this.btn_ReplaceMark = new System.Windows.Forms.Button();
+            this.btn_UpdateMark = new System.Windows.Forms.Button();
             this.datagrid_Mark = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datagrid_Mark)).BeginInit();
@@ -53,7 +53,7 @@
             this.panel1.Controls.Add(this.cbb_FindSubject);
             this.panel1.Controls.Add(this.btn_Exit);
             this.panel1.Controls.Add(this.btn_Find);
-            this.panel1.Controls.Add(this.btn_ReplaceMark);
+            this.panel1.Controls.Add(this.btn_UpdateMark);
             this.panel1.Controls.Add(this.datagrid_Mark);
             this.panel1.Location = new System.Drawing.Point(12, 15);
             this.panel1.Name = "panel1";
@@ -132,14 +132,15 @@
             this.btn_Find.UseVisualStyleBackColor = true;
             this.btn_Find.Click += new System.EventHandler(this.btn_Find_Click);
             // 
-            // btn_ReplaceMark
+            // btn_UpdateMark
             // 
-            this.btn_ReplaceMark.Location = new System.Drawing.Point(609, 456);
-            this.btn_ReplaceMark.Name = "btn_ReplaceMark";
-            this.btn_ReplaceMark.Size = new System.Drawing.Size(131, 64);
-            this.btn_ReplaceMark.TabIndex = 39;
-            this.btn_ReplaceMark.Text = "Lưu điểm";
-            this.btn_ReplaceMark.UseVisualStyleBackColor = true;
+            this.btn_UpdateMark.Location = new System.Drawing.Point(609, 456);
+            this.btn_UpdateMark.Name = "btn_UpdateMark";
+            this.btn_UpdateMark.Size = new System.Drawing.Size(131, 64);
+            this.btn_UpdateMark.TabIndex = 39;
+            this.btn_UpdateMark.Text = "Lưu điểm";
+            this.btn_UpdateMark.UseVisualStyleBackColor = true;
+            this.btn_UpdateMark.Click += new System.EventHandler(this.btn_UpdateMark_Click);
             // 
             // datagrid_Mark
             // 
@@ -150,6 +151,7 @@
             this.datagrid_Mark.RowTemplate.Height = 24;
             this.datagrid_Mark.Size = new System.Drawing.Size(911, 326);
             this.datagrid_Mark.TabIndex = 38;
+            this.datagrid_Mark.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datagrid_Mark_CellClick);
             // 
             // fTeacher_Mark
             // 
@@ -160,7 +162,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "fTeacher_Mark";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "fTeacher_Mark";
+            this.Text = "Quản lý điểm";
             this.Load += new System.EventHandler(this.fTeacher_Mark_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -173,7 +175,7 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btn_Exit;
-        private System.Windows.Forms.Button btn_ReplaceMark;
+        private System.Windows.Forms.Button btn_UpdateMark;
         private System.Windows.Forms.DataGridView datagrid_Mark;
         private System.Windows.Forms.TextBox txt_FindID;
         private System.Windows.Forms.Label label2;
